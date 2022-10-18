@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Topnav() {
   return (
-    <div class="flex items-center justify-between p-5 border-b sm:px-10 sm:py-8">
+    <div class="flex items-center justify-between p-5 border-b border-black sm:px-10 sm:py-8">
       <div class="flex flex-wrap w-56 sm:w-72 ">
       <Link href="/" class="cursor-pointer">
         <a class="text-3xl font-black uppercase sm:text-6xl">Plantones</a></Link>

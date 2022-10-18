@@ -9,20 +9,26 @@ function urlFor(source) {
 
 export default function PlantCard({ scientificName, image, pantone, hexCode }) {
   return (
-    <section class="border border-black mb-10 shadow-lg">
-      <span
-        class="block bg-no-repeat bg-cover aspect-w-1 aspect-h-1"
-        style={{
+    <section 
+      class="w-full p-5 sm:p-10 md:w-2/5 lg:w-2/5" 
+      style={{
           backgroundColor: hexCode,
-          backgroundImage: image
-            ? `url('${urlFor(image).width(400).height(400).fit("crop")}')`
-            : undefined,
-        }}
-      />
-      <div class="p-5">
-        <h1 class="text-2xl uppercase sm:text-6xl">{pantone}</h1>
-        <h2 class="text-lg">{scientificName}</h2>
-      </div>
+        }}>
+        <div class="border border-black bg-white">
+          <span
+            class="block bg-no-repeat bg-cover aspect-w-1 aspect-h-1  border-b border-black"
+            style={{
+              backgroundColor: hexCode,
+              backgroundImage: image
+                ? `url('${urlFor(image).width(400).height(400).fit("crop")}')`
+                : undefined,
+            }}
+          />
+          <div class="p-10">
+            <h2 class="text-2xl font-black uppercase sm:text-5xl">{pantone}</h2>
+            <h3 class="text-lg sm:text-xl">{scientificName}</h3>
+          </div>
+        </div>
     </section>
   );
 }

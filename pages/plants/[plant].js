@@ -5,11 +5,19 @@ import { client } from "../../utils/client";
 import Layout from "../../components/Layout";
 
 const PlantPage = ({
-  singlePlant: { commonName, hexCode, scientificName, plantImage, pantone },
+  singlePlant: { 
+    commonName, 
+    hexCode, 
+    scientificName, 
+    plantImage, 
+    pantone, 
+    lightReq,
+    funFacts,
+    },
 }) => {
   return (
     <Layout>
-      <PlantCardList name={commonName} pantone={hexCode} />
+      <PlantCardList commonName={commonName} />
       <PlantCard
         name={commonName}
         pantone={pantone}
@@ -17,7 +25,11 @@ const PlantPage = ({
         scientificName={scientificName}
         image={plantImage}
       />
-      <PlantInfo name={commonName} />
+      <PlantInfo 
+        name={commonName} 
+        scientificName={scientificName} 
+        lightReq={lightReq}
+        funFacts={funFacts} />
     </Layout>
   );
 };
@@ -40,7 +52,8 @@ export async function getServerSideProps({ params }) {
         },
         plantImage,
         scientificName,
-        toxicity
+        toxicity,
+        funFacts
     }`,
     {
       plant,

@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
                 <link rel="icon" href="/plantone-icon.ico" />
             </Head>
             <Topnav />
-            <section class="p-5 sm:p-10">{children}</section>
+            <section class="flex flex-wrap">{children}</section>
         </main>
     )
 }

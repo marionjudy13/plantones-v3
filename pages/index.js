@@ -1,12 +1,16 @@
 import Grid from '../components/Grid'
 import Layout from '../components/Layout'
+import Topnav from '../components/Topnav'
 import { client } from '../utils/client'
 
 export default function Home({ plants }) {
   return (
-    <Layout>
-      <Grid props={plants} />
-    </Layout>
+    <>
+      <Topnav />
+      <section class="p-5 sm:p-10">
+        <Grid props={plants} />
+      </section>
+    </>
   )
 }
 
