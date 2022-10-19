@@ -1,5 +1,4 @@
 import Grid from '../components/Grid'
-import Layout from '../components/Layout'
 import Topnav from '../components/Topnav'
 import { client } from '../utils/client'
 

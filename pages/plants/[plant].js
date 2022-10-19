@@ -17,7 +17,8 @@ const PlantPage = ({
 }) => {
   return (
     <Layout>
-      <PlantCardList commonName={commonName} />
+    {console.log(commonName)}
+      <PlantCardList />
       <PlantCard
         name={commonName}
         pantone={pantone}
@@ -33,36 +34,36 @@ const PlantPage = ({
     </Layout>
   );
 };
-
 export default PlantPage;
 
 export async function getServerSideProps({ params }) {
-  const { plant } = params;
-  const singlePlant = await client.fetch(
-    `*[_type == "plants" && slug.current == $plant][0] {
-        commonName,
-        dirtReq,
-        geoOrigin,
-        hexCode,
-        pantone,
-        lightReq -> {
-            lightType,
-            lightDescription,
-            example
-        },
-        plantImage,
-        scientificName,
-        toxicity,
-        funFacts
-    }`,
-    {
-      plant,
+    const { plant } = params;
+    const singlePlant = await client.fetch(
+        `*[_type == "plants" && slug.current == $plant][0] {
+            commonName,
+            dirtReq,
+            geoOrigin,
+            hexCode,
+            pantone,
+            lightReq -> {
+                lightType,
+                lightDescription,
+                example
+            },
+            plantImage,
+            scientificName,
+            toxicity,
+            funFacts
+        }`,
+        {
+            plant,
+        }
+        );
+        
+        return {
+            props: {
+                singlePlant,
+            },
+        };
     }
-  );
-
-  return {
-    props: {
-      singlePlant,
-    },
-  };
-}
+    
