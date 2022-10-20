@@ -3,6 +3,7 @@ import PlantCardList from "../../components/PlantCardList";
 import PlantInfo from "../../components/PlantInfo";
 import { client } from "../../utils/client";
 import Layout from "../../components/Layout";
+// import BlockContent from "@sanity/block-content-to-react"
 
 const PlantPage = ({
   singlePlant: { 
@@ -17,7 +18,6 @@ const PlantPage = ({
 }) => {
   return (
     <Layout>
-    {console.log(commonName)}
       <PlantCardList />
       <PlantCard
         name={commonName}
@@ -31,6 +31,7 @@ const PlantPage = ({
         scientificName={scientificName} 
         lightReq={lightReq}
         funFacts={funFacts} />
+       {/* <BlockContent blocks={funFacts} /> */}
     </Layout>
   );
 };

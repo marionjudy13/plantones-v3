@@ -10,7 +10,7 @@ function urlFor(source) {
 export default function PlantCard({ scientificName, image, pantone, hexCode }) {
   return (
     <section 
-      class="w-full p-5 sm:p-10 md:w-2/5 lg:w-2/5" 
+      class="w-full p-5 sm:p-10 md:w-2/5 lg:w-1/4" 
       style={{
           backgroundColor: hexCode,
         }}>
