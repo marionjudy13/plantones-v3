@@ -1,6 +1,6 @@
-import Grid from '../components/Grid'
-import Topnav from '../components/Topnav'
-import { client } from '../utils/client'
+import Grid from "@components/Grid";
+import Topnav from "@components/Topnav";
+import { client } from "@utils/client";
 
 export default function Home({ plants }) {
   return (
@@ -10,18 +10,18 @@ export default function Home({ plants }) {
         <Grid props={plants} />
       </section>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
   const plants = await client.fetch(`*[_type == "plants"] {
     ...,
     "slug": slug.current,
-  }`)
+  }`);
 
   return {
     props: {
       plants,
     },
-  }
+  };
 }
