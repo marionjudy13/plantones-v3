@@ -18,7 +18,6 @@ const PlantPage = ({ allPlants, plantDetails }) => {
         <PlantCard {...plantDetails} />
       </section>
       <PlantInfo {...plantDetails} />
-      {/* <BlockContent blocks={funFacts} /> */}
     </Layout>
   );
 };

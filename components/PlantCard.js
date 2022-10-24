@@ -14,7 +14,7 @@ export default function PlantCard({
   hexCode,
 }) {
   return (
-    <div class="border border-black bg-white">
+    <div class="border border-black bg-white mb-10">
       <span
         class="block bg-no-repeat bg-cover aspect-w-1 aspect-h-1  border-b border-black"
         style={{
