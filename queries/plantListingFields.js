@@ -8,8 +8,6 @@ export const plantListingFields = `
   pantone,
   lightReq -> {
     lightType,
-    lightDescription,
-    example
   },
   plantImage,
   scientificName,

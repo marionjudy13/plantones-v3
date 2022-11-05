@@ -32,11 +32,6 @@ export default {
       title: 'Nicknames',
     },
     {
-      name: 'geoOrigin',
-      type: 'string',
-      title: 'Geographical Origin',
-    },
-    {
       title: 'Plant Image',
       name: 'plantImage',
       type: 'image',
@@ -62,19 +57,25 @@ export default {
       to: [{type: 'lightReq'}]
     },
     {
-      name: 'waterReq',
+      name: 'waterFreq',
       type: 'string',
-      title: 'Water Requirements',
+      title: 'Water Frequency',
+      type: 'reference',
+      to: [{type: 'waterFreq'}]
     },
     {
-      name: 'dirtReq',
+      name: 'dirtPref',
       type: 'string',
-      title: 'Dirt Requirements',
+      title: 'Dirt Preference',
+      type: 'reference',
+      to: [{type: 'dirtPref'}]
     },
     {
       name: 'toxicity',
       type: 'string',
       title: 'Can my cat eat it?',
+      type: 'reference',
+      to: [{type: 'toxicity'}]
     },
     {
       name: 'funFacts',
