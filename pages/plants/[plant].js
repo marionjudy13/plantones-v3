@@ -6,7 +6,8 @@ import Layout from "@components/Layout";
 import { plantDetails } from "@queries/plantDetails";
 
 const PlantPage = ({ allPlants, plantDetails }) => {
-  return (
+  return (plantDetails && 
+  (  
     <Layout>
       <PlantCardList items={allPlants} />
       <section
@@ -19,26 +20,35 @@ const PlantPage = ({ allPlants, plantDetails }) => {
       </section>
       <PlantInfo {...plantDetails} />
     </Layout>
-  );
+  ));
 };
 export default PlantPage;
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const res = await client.fetch(`*[_type == "plant"]`);
+  const pathSlugs = res.map((singlePlant) => ({
+    params: { slug: singlePlant.slug.current },
+  }));
+
+  return { paths: pathSlugs, fallback: true };
+}
+
+export async function getStaticProps({ params }) {
   const { plant } = params;
-  const data = await client.fetch(plantDetails, {
+  const res = await client.fetch(plantDetails, {
     plant,
   });
 
-  if (!data.plantDetails) {
+  if (!res.plantDetails) {
     return {
       notFound: true,
-    };
+    }
   }
 
   return {
     props: {
-      plantDetails: data.plantDetails,
-      allPlants: data.allPlants,
+      plantDetails: res.plantDetails,
+      allPlants: res.allPlants,
     },
-  };
+  }
 }

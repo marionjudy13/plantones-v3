@@ -1,6 +1,7 @@
 export const plantListingFields = `
   _id,
   commonName,
+  slug,
   dirtReq,
   geoOrigin,
   hexCode,
