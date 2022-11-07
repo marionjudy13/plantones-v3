@@ -11,6 +11,7 @@ export const plantListingFields = `
   },
   plantImage,
   scientificName,
+  nicknames,
   toxicity,
   funFacts
 `;
