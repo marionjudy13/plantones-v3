@@ -2,16 +2,20 @@ export const plantListingFields = `
   _id,
   commonName,
   slug,
-  dirtReq,
-  geoOrigin,
+  scientificName,
+  nicknames,
+  plantImage,
   hexCode,
   pantone,
   lightReq -> {
     lightType,
   },
-  plantImage,
-  scientificName,
-  nicknames,
+  waterFreq -> {
+    waterFreq,
+  },
+  dirtPref -> {
+    dirtPref,
+  },
   toxicity,
   funFacts
 `;
