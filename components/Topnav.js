@@ -7,7 +7,7 @@ export default function Topnav() {
     <header class="flex items-center w-full justify-between px-10 pb-5 pt-6 border-b border-black sm:px-10 sm:py-8">
       <div class="flex flex-wrap">
       <Link href="/" class="cursor-pointer">
-        <a class="text-4xl font-black uppercase w-full sm:text-6xl">P<span class="font-light">(</span>l<span class="font-light">)</span>antones</a></Link>
+        <a class="text-4xl font-black uppercase w-full sm:text-6xl sm:mb-1">P<span class="font-light">(</span>l<span class="font-light">)</span>antones</a></Link>
         <span class="-mt-1 text-xl">A Botanical Collection of Colors</span>
       </div>
       {/* <div class="flex mr-2">
