@@ -25,8 +25,8 @@ export default function PlantCard({
         }}
       />
       <div class="p-10">
-        <h2 class="text-2xl font-black uppercase sm:text-5xl">{pantone}</h2>
-        <h3 class="text-lg sm:text-xl">{scientificName}</h3>
+        <h2 class="text-2xl font-black uppercase sm:text-4xl">{pantone}</h2>
+        <h3 class="text-lg sm:text-lg sm:leading-5">{scientificName}</h3>
       </div>
     </div>
   );

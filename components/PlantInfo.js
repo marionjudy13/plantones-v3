@@ -1,7 +1,11 @@
 import BlockContent from "@sanity/block-content-to-react";
-import DirectLight from "./DirectLight";
-import IndirectLight from "./IndirectLight";
-import PartialLight from "./PartialLight";
+import DirectLight from "./Lighting/DirectLight";
+import IndirectLight from "./Lighting/IndirectLight";
+import PartialLight from "./Lighting/PartialLight";
+import EveryTwoWeeks from "./Water/EveryTwoWeeks";
+import OnceAWeek from "./Water/OnceAWeek";
+import TwiceAWeek from "./Water/TwiceAWeek";
+import TwoToFour from "./Water/TwoToFourWeeks";
 
 export default function PlantInfo({
   commonName,
@@ -24,22 +28,36 @@ export default function PlantInfo({
 
       {/* Plant Preferences - Separate to component */}
       <div class="flex flex-wrap items-center mb-5">
+
+
+
           {/* Light Requirements */}
           <span class="flex w-full mb-2">
-          {(lightReq.lightType == "Indirect Sun") ? <IndirectLight /> :
-          (lightReq.lightType == "Direct Sun") ? <DirectLight /> :
-          (lightReq.lightType == "Partial Sun") ? <PartialLight /> :
-          (lightReq.lightType == "Shade") ? 'shade' :
-           "I'm not sure about the light requirements!"}
+            {(lightReq.lightType == "Indirect Sun") ? <IndirectLight /> :
+            (lightReq.lightType == "Direct Sun") ? <DirectLight /> :
+            (lightReq.lightType == "Partial Sun") ? <PartialLight /> :
+            (lightReq.lightType == "Shade") ? 'shade' :
+            "I'm not sure about the light requirements!"}
             <p class="text-sm mb-0 ml-2 uppercase font-medium">{lightReq.lightType}</p>
           </span>
+
+
+
           {/* Watering Frequency */}
-          <span class="flex w-full">
-            <p class="text-sm mb-0 uppercase font-medium">{waterFreq.waterFreq}</p>
+          <span class="flex w-full mb-2">
+            {(waterFreq.waterFreq == "Once a Week") ? <OnceAWeek /> :
+            (waterFreq.waterFreq == "Twice a Week") ? <TwiceAWeek /> :
+            (waterFreq.waterFreq == "Once every two weeks") ? <EveryTwoWeeks /> :
+            (waterFreq.waterFreq == "Once every 2 - 4 weeks") ? <TwoToFour /> : 
+            "I'm not sure the water requirements."
+            }
+            <p class="text-sm  ml-2 mb-0 uppercase font-medium">Water: {waterFreq.waterFreq}</p>
           </span>
+
+          
           {/* Dirt Preference */}
           <span>
-            <p class="text-sm mb-0 uppercase font-medium">{dirtPref.dirtPref}</p>
+            <p class="text-sm mb-0 uppercase font-medium">Soil: {dirtPref.dirtPref}</p>
           </span>
       </div>
 
