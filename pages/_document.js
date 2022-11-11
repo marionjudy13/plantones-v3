@@ -11,7 +11,7 @@ export default function Document() {
         <link rel="icon" href="/plantone-icon.ico" />
 
       </Head>
-      <body class="bg-white">
+      <body class="bg-white font-light">
         <Main />
         <NextScript />
       </body>
