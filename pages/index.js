@@ -6,7 +6,7 @@ export default function Home({ plants }) {
   return (
     <>
       <Topnav />
-      <section class="p-7 sm:p-10">
+      <section class="p-10">
         <Grid props={plants} />
       </section>
     </>
