@@ -18,16 +18,16 @@ export default function PlantInfo({
 }) {
 
   return (
-    <section class="border-l border-black p-14 sm:p-20 md:p-10 md:w-3/5 md:overflow-auto md:h-full lg:w-1/2">
-      <h1 class="text-2xl font-black uppercase sm:text-4xl">{commonName}</h1>
+    <section class="sm:border-l border-black p-12 sm:p-20 md:p-10 md:w-3/5 md:overflow-auto md:h-full lg:w-1/2">
+      <h1 class="text-3xl font-black uppercase sm:text-4xl md:text-5xl">{commonName}</h1>
       <h2 class="text-xl sm:text-3xl mb-4">{scientificName}</h2>
-      <h3 class="text-lg font-light mb-4">
+      <h3 class="text-lg font-light mb-5">
         <span class="font-medium">Nickname(s): </span>
-        {nicknames}
+        {nicknames ? nicknames : "Not Sure!"}
       </h3>
 
       {/* Plant Preferences - Separate to component */}
-      <div class="flex flex-wrap items-center mb-5">
+      <div class="flex flex-wrap items-center mb-7">
 
 
 
@@ -47,21 +47,31 @@ export default function PlantInfo({
           <span class="flex w-full mb-2">
             {(waterFreq.waterFreq == "Once a Week") ? <OnceAWeek /> :
             (waterFreq.waterFreq == "Twice a Week") ? <TwiceAWeek /> :
-            (waterFreq.waterFreq == "Once every two weeks") ? <EveryTwoWeeks /> :
-            (waterFreq.waterFreq == "Once every 2 - 4 weeks") ? <TwoToFour /> : 
+            (waterFreq.waterFreq == "Once Every 2 Weeks") ? <EveryTwoWeeks /> :
+            (waterFreq.waterFreq == "Once Every 2-4 Weeks") ? <TwoToFour /> : 
             "I'm not sure the water requirements."
             }
-            <p class="text-sm  ml-2 mb-0 uppercase font-medium">Water: {waterFreq.waterFreq}</p>
+            <p class="text-sm  ml-2 mb-0 uppercase font-light">
+              <span class="font-medium">
+                Water:&nbsp;
+              </span>
+              {waterFreq.waterFreq}
+            </p>
           </span>
 
           
           {/* Dirt Preference */}
           <span>
-            <p class="text-sm mb-0 uppercase font-medium">Soil: {dirtPref.dirtPref}</p>
+            <p class="text-sm mb-0 uppercase font-light">
+              <span class="font-medium">
+                Soil Preference:&nbsp;
+              </span> 
+              {dirtPref.dirtPref}
+            </p>
           </span>
       </div>
 
-      <hr class="mb-5" />
+      <hr class="mb-7" />
       <BlockContent blocks={funFacts} />
     </section>
   );

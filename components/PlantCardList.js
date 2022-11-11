@@ -7,7 +7,7 @@ export default function PlantCardList(props) {
       {props.items.map((card) => {
         return (
           <Link key={card._id} href={`/plants/${card.slug.current}`}>
-            <a>
+            <a class="block mb-10">
               <PlantCard {...card} />
             </a>
           </Link>
