@@ -9,6 +9,7 @@ const Meter = ({ number, prefix, size }) => {
           const count = index + 1;
           return (
             <img
+              key={index + prefix}
               width={size}
               class="mr-1"
               src={`/${prefix}-${number >= count ? "solid" : "outline"}.svg`}
