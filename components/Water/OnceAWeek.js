@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function OnceAWeek() {
   return (
@@ -8,7 +8,7 @@ function OnceAWeek() {
       <img width="13" class="mr-1" src="/droplet-solid.svg" />
       <img width="13" class="mr-1" src="/droplet-regular.svg" />
     </div>
-  )
+  );
 }
 
-export default OnceAWeek
+export default OnceAWeek;

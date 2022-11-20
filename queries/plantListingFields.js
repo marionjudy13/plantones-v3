@@ -6,6 +6,8 @@ export const plantListingFields = `
   nicknames,
   plantImage,
   hexCode,
+  lightNumber, 
+  waterNumber,
   pantone,
   lightReq -> {
     lightType,

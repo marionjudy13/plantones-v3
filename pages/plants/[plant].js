@@ -6,21 +6,22 @@ import Layout from "@components/Layout";
 import { plantDetails } from "@queries/plantDetails";
 
 const PlantPage = ({ allPlants, plantDetails }) => {
-  return (plantDetails && 
-  (  
-    <Layout>
-      <PlantCardList items={allPlants} />
-      <section
-        class="w-full p-10 md:w-2/5 lg:w-1/4"
-        style={{
-          backgroundColor: plantDetails.hexCode,
-        }}
-      >
-        <PlantCard {...plantDetails} />
-      </section>
-      <PlantInfo {...plantDetails} />
-    </Layout>
-  ));
+  return (
+    plantDetails && (
+      <Layout>
+        <PlantCardList items={allPlants} />
+        <section
+          class="w-full p-10 md:w-2/5 lg:w-1/4"
+          style={{
+            backgroundColor: plantDetails.hexCode,
+          }}
+        >
+          <PlantCard {...plantDetails} />
+        </section>
+        <PlantInfo {...plantDetails} />
+      </Layout>
+    )
+  );
 };
 export default PlantPage;
 
@@ -42,7 +43,7 @@ export async function getStaticProps({ params }) {
   if (!res.plantDetails) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
@@ -50,5 +51,5 @@ export async function getStaticProps({ params }) {
       plantDetails: res.plantDetails,
       allPlants: res.allPlants,
     },
-  }
+  };
 }
