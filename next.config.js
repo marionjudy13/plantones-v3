@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    PROJECT_ID: process.env.PROJECT_ID,
+    PROJECT_ID: "lcjtzh5r",
   },
 };
 
