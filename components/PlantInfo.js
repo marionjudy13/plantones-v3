@@ -1,5 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Meter from "./Meter";
+import Link from "next/link";
 
 export default function PlantInfo({
   commonName,
@@ -56,6 +57,11 @@ export default function PlantInfo({
 
       <hr class="mb-7" />
       <BlockContent blocks={funFacts} />
+      <Link href="/" class="md:hidden">
+        <a class="tracking-wider block font-bold text-center text-xs uppercase p-10 mt-10 border-t">
+          Back Home
+        </a>
+      </Link>
     </section>
   );
 }
