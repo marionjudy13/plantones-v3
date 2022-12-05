@@ -24,7 +24,7 @@ export default function PlantCard({
             : undefined,
         }}
       />
-      <div class="p-5 sm:p-10">
+      <div class="p-10">
         <h2 class="text-3xl font-black uppercase mb-1 sm:text-4xl">
           {pantone}
         </h2>
