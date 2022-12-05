@@ -11,7 +11,7 @@ export default function PlantCardList(props) {
               <PlantCard {...card} />
             </a>
           </Link>
-          );
+        );
       })}
     </section>
   );

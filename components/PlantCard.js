@@ -16,7 +16,7 @@ export default function PlantCard({
   return (
     <div class="border border-black bg-white">
       <span
-        class="block bg-no-repeat bg-cover aspect-w-1 aspect-h-1  border-b border-black"
+        class="block bg-no-repeat bg-cover aspect-w-1 aspect-h-1 border-b border-black"
         style={{
           backgroundColor: hexCode,
           backgroundImage: plantImage
@@ -24,7 +24,7 @@ export default function PlantCard({
             : undefined,
         }}
       />
-      <div class="p-10">
+      <div class="p-5 sm:p-10">
         <h2 class="text-3xl font-black uppercase mb-1 sm:text-4xl">
           {pantone}
         </h2>
