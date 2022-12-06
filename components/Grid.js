@@ -32,7 +32,7 @@ export default function Grid({ props }) {
                 >
                   <div
                     style={{ backgroundColor: plant.hexCode }}
-                    class="shadow-md shadow-black/20 opacity-0 ease-in-out duration-300 md:group-hover:opacity-100 flex justify-center items-center h-10 absolute -top-10 md:group-hover:top-0 w-full"
+                    class="shadow shadow-black/20 opacity-0 ease-in-out duration-300 md:group-hover:opacity-100 flex justify-center items-center h-10 absolute -top-10 md:group-hover:top-0 w-full"
                   >
                     <div class="text-sm text-white font-medium uppercase mt-2 mb-1">
                       {plant.commonName}
