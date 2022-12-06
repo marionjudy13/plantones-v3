@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+h4 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }

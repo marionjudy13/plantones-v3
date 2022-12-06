@@ -11,7 +11,7 @@ const PlantPage = ({ allPlants, plantDetails }) => {
       <Layout>
         <PlantCardList items={allPlants} />
         <section
-          class="w-full p-5 sm:p-10 md:w-2/5 lg:w-1/4"
+          class="w-full border-b border-black p-10 md:w-2/5 lg:w-1/4"
           style={{
             backgroundColor: plantDetails.hexCode,
           }}

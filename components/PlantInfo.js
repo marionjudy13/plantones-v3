@@ -1,10 +1,11 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Meter from "./Meter";
-import Link from "next/link";
+import BackHome from "./BackHome";
 
 export default function PlantInfo({
   commonName,
   scientificName,
+  hexCode,
   nicknames,
   lightReq,
   waterFreq,
@@ -18,50 +19,50 @@ export default function PlantInfo({
       <h1 class="text-3xl font-black uppercase sm:text-4xl md:text-5xl">
         {commonName}
       </h1>
-      <h2 class="text-xl sm:text-3xl mb-4">{scientificName}</h2>
-      <h3 class="text-lg font-light mb-5">
-        <span class="font-medium">Nickname(s): </span>
-        {nicknames ? nicknames : "Not Sure!"}
-      </h3>
+      <h2 class="text-xl sm:text-3xl mb-10">{scientificName}</h2>
 
       {/* Plant Preferences - Separate to component */}
       <div class="flex flex-wrap items-center mb-7">
         {/* Light Requirements */}
         <span class="flex w-full mb-2">
-          <Meter number={lightNumber} prefix="sun" size={15} />
-
-          <p class="text-sm mb-0 ml-2 uppercase font-medium">
+          <p class="text-sm mr-2 mb-0 font-light">
+            <span class="font-medium uppercase mr-1">Light:&nbsp;</span>
             {lightReq.lightType}
           </p>
+          <Meter number={lightNumber} prefix="sun" size={15} />
         </span>
 
         {/* Watering Frequency */}
         <span class="flex w-full mb-2">
-          <Meter number={waterNumber} prefix="droplet" size={13} />
-
-          {/* "I'm not sure the water requirements." */}
-          <p class="text-sm  ml-2 mb-0 uppercase font-light">
-            <span class="font-medium">Water:&nbsp;</span>
+          <p class="text-sm mr-2 mb-0 font-light">
+            <span class="font-medium uppercase mr-1">Water:&nbsp;</span>
             {waterFreq.waterFreq}
           </p>
+          <Meter number={waterNumber} prefix="droplet" size={13} />
         </span>
 
         {/* Dirt Preference */}
-        <span>
-          <p class="text-sm mb-0 uppercase font-light">
-            <span class="font-medium">Soil Preference:&nbsp;</span>
+        <span class="flex w-full mb-2">
+          <p class="text-sm  mb-0 font-light">
+            <span class="font-medium uppercase mr-1">
+              Soil Preference:&nbsp;
+            </span>
             {dirtPref.dirtPref}
+          </p>
+        </span>
+
+        {/* Nicknames */}
+        <span class="flex w-full mb-2">
+          <p class="text-sm mb-0 font-light">
+            <span class="font-medium uppercase mr-2">Nickname(s): </span>
+            {nicknames ? nicknames : "Not Sure!"}
           </p>
         </span>
       </div>
 
-      <hr class="mb-7" />
+      <hr class="mb-8" />
       <BlockContent blocks={funFacts} />
-      <Link href="/" class="md:hidden">
-        <a class="tracking-wider block font-bold text-center text-xs uppercase p-10 mt-10 border-t">
-          Back Home
-        </a>
-      </Link>
+      <BackHome color={hexCode} />
     </section>
   );
 }

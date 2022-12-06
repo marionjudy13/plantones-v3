@@ -14,11 +14,6 @@ const Layout = ({ children }) => {
       <section class="flex flex-wrap md:flex-auto md:overflow-hidden">
         {children}
       </section>
-      <section class="block w-full text-center mt-5 tracking-wider md:hidden">
-        <Link href="/">
-          <a class="font-bold text-xs uppercase p-10 border-t">Back Home</a>
-        </Link>
-      </section>
     </main>
   );
 };
